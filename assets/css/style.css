@@ -275,6 +275,17 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- reliability ---------- */
 
+.rel-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 32px;
+}
+.rel-teaser .section-lead { margin-bottom: 0; max-width: 540px; }
+@media (max-width: 768px) { .rel-teaser { flex-direction: column; align-items: flex-start; } }
+
 .reliability { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
 .mech-list {
