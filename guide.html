@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用指南 · just-did</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/48x48.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/i18n.js" defer></script>
+</head>
+<body>
+
+<!-- nav -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/icons/32x32.png" alt="just-did">just-did</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" data-zh="首页" data-en="Home"></a>
+      <a href="download.html" data-zh="下载" data-en="Download"></a>
+      <a href="guide.html" aria-current="page" data-zh="使用指南" data-en="Guide"></a>
+      <a href="faq.html" data-zh="FAQ" data-en="FAQ"></a>
+    </nav>
+    <div class="lang-switch">
+      <button type="button" data-lang-btn="zh">中文</button>
+      <button type="button" data-lang-btn="en">EN</button>
+    </div>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="menu">☰</button>
+  </div>
+</header>
+<!-- /nav -->
+
+<main>
+  <section class="page-head container">
+    <h1 class="page-title" data-zh="使用指南" data-en="Guide"></h1>
+    <p class="page-lead" data-zh="三步连起来，之后每天要做的只有一件事：记。" data-en="Connect in three steps. After that, there is only one thing to do every day: record."></p>
+  </section>
+
+  <section class="section-tight container">
+    <h2 class="guide-sub" data-zh="快速上手" data-en="Quick start"></h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title" data-zh="电脑端：解压运行" data-en="Desktop: unzip and run"></div>
+        <p class="step-text" data-zh="下载便携 ZIP 解压到任意目录，运行 JustDid.exe。屏幕右侧出现悬浮窗，主界面里有你的日报日历。" data-en="Download the portable ZIP, unzip it anywhere and run JustDid.exe. A floating window docks to the right edge; the main window holds your calendar."></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title" data-zh="手机端：安装打开" data-en="Phone: install and open"></div>
+        <p class="step-text" data-zh="下载 APK 安装，打开后即是记录输入框，可以立刻开始随手记录。" data-en="Install the APK and open it. The input box is right there — start capturing immediately."></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title" data-zh="扫码连接" data-en="Scan to connect"></div>
+        <p class="step-text" data-zh="让手机和电脑处于同一局域网（同一个 WiFi）。点手机端的状态指示器扫码，对准电脑主界面上的二维码。连接成功后状态点变绿，之后每 60 秒自动健康检查。" data-en="Put both devices on the same LAN (same Wi-Fi). Tap the status indicator on the phone, point at the QR code in the desktop main window. The status dot turns green; health checks run every 60 s automatically."></p>
+      </div>
+    </div>
+
+    <h2 class="guide-sub" data-zh="日常记录" data-en="Recording"></h2>
+    <div class="step">
+      <div class="step-num" data-zh="·" data-en="·"></div>
+      <div>
+        <p class="step-text" data-zh="电脑端：单击悬浮窗展开输入框，写完回车即存，窗口自动折起。双击悬浮窗打开主界面。" data-en="Desktop: click the floating window to expand the input, press Enter to save — it folds away. Double-click opens the main window."></p>
+        <p class="step-text" style="margin-top:8px" data-zh="手机端：打开即输入框，按天自动归档到暂存区。" data-en="Phone: open and type. Entries are filed by day into the staging area."></p>
+      </div>
+    </div>
+
+    <h2 class="guide-sub" data-zh="同步" data-en="Sync"></h2>
+    <div class="step">
+      <div class="step-num" data-zh="·" data-en="·"></div>
+      <div>
+        <p class="step-text" data-zh="推送：手机端一键推送暂存记录，打包为 ZIP 批数据发给电脑端；失败时数据保留，可重试或丢弃，不会丢失。" data-en="Push: one tap sends the staging entries to the desktop as a ZIP batch. On failure the data is kept — retry or discard, nothing is lost."></p>
+        <p class="step-text" style="margin-top:8px" data-zh="拉取：在手机端日历上多选日期，批量拉取日报与索引，供离线查看。" data-en="Fetch: multi-select dates on the phone calendar to pull daily reports and their index for offline reading."></p>
+      </div>
+    </div>
+
+    <h2 class="guide-sub" data-zh="查看与管理" data-en="Review and manage"></h2>
+    <div class="step">
+      <div class="step-num" data-zh="·" data-en="·"></div>
+      <div>
+        <p class="step-text" data-zh="电脑端：日历视图里，有记录的日期带绿点；点击日期查看当天时间线；存储统计面板显示每日占用。" data-en="Desktop: calendar view with green dots on days that have entries; click a day for its timeline; the storage panel shows per-day usage."></p>
+        <p class="step-text" style="margin-top:8px" data-zh="手机端：暂存与已拉取日报按时间线合并展示；离线状态下可沉浸式滑动查看（上滑上一天、下滑下一天）；管理页可查看缓存占用、清理缓存、按来源统计日报。" data-en="Phone: staging and fetched reports merge into one timeline; swipe up/down for previous/next day even offline; the manage page shows cache usage, cleanup and per-source stats."></p>
+      </div>
+    </div>
+
+    <h2 class="guide-sub" data-zh="备份与恢复" data-en="Backup and restore"></h2>
+    <div class="step">
+      <div class="step-num" data-zh="·" data-en="·"></div>
+      <div>
+        <p class="step-text" data-zh="电脑端可一键将全部日报导出为 ZIP 备份，也可从备份恢复；支持按周/月/年阈值批量清理旧数据（带二次确认）。" data-en="The desktop exports all daily reports to a ZIP backup in one click and can restore from it. Bulk cleanup by week/month/year thresholds comes with a confirmation step."></p>
+      </div>
+    </div>
+
+    <h2 class="guide-sub" data-zh="网络说明" data-en="Network notes"></h2>
+    <div class="step">
+      <div class="step-num" data-zh="·" data-en="·"></div>
+      <div>
+        <p class="step-text" data-zh="电脑端同步服务默认监听 18080 端口（config.yml 可改），仅在局域网内提供服务。两端需要处于同一局域网；若连接失败，请检查电脑防火墙是否放行该端口。" data-en="The desktop sync service listens on port 18080 by default (changeable in config.yml) and only serves the local network. Both devices must be on the same LAN; if the connection fails, check whether the firewall allows that port."></p>
+        <div class="note-box"><span data-zh="排查顺序：" data-en="Checklist:"></span> <span data-zh="同一 WiFi → 防火墙放行 18080 → 重启电脑端服务" data-en="same Wi-Fi → firewall allows 18080 → restart the desktop service"></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/just-did">GitHub</a>
+      <a href="https://github.com/just-did/just-did-desktop">just-did-desktop</a>
+      <a href="https://github.com/just-did/just-did-app">just-did-app</a>
+      <a href="https://github.com/just-did/just-did.github.io" data-zh="本站仓库" data-en="This site"></a>
+    </div>
+    <div class="footer-copy">just-did · Apache-2.0</div>
+  </div>
+</footer>
+<!-- /footer -->
+
+</body>
+</html>

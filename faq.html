@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ · just-did</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/48x48.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/i18n.js" defer></script>
+</head>
+<body>
+
+<!-- nav -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/icons/32x32.png" alt="just-did">just-did</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" data-zh="首页" data-en="Home"></a>
+      <a href="download.html" data-zh="下载" data-en="Download"></a>
+      <a href="guide.html" data-zh="使用指南" data-en="Guide"></a>
+      <a href="faq.html" aria-current="page" data-zh="FAQ" data-en="FAQ"></a>
+    </nav>
+    <div class="lang-switch">
+      <button type="button" data-lang-btn="zh">中文</button>
+      <button type="button" data-lang-btn="en">EN</button>
+    </div>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="menu">☰</button>
+  </div>
+</header>
+<!-- /nav -->
+
+<main>
+  <section class="page-head container">
+    <h1 class="page-title" data-zh="常见问题" data-en="FAQ"></h1>
+    <p class="page-lead" data-zh="关于连接、数据与迁移，这里都能找到答案。" data-en="Answers about connectivity, data and migration."></p>
+  </section>
+
+  <section class="section-tight container">
+
+    <div class="faq-item">
+      <div class="faq-q" data-zh="手机连接不上电脑怎么办？" data-en="The phone cannot connect to the desktop. What now?"></div>
+      <p class="faq-a" data-zh="按顺序排查：① 两端是否在同一个局域网（同一个 WiFi）；② 电脑防火墙是否放行了同步服务端口（默认 18080）；③ 重启电脑端程序。电脑端 IP 变化时二维码会自动刷新，重新扫码即可。" data-en="Check in order: ① both devices on the same LAN (same Wi-Fi); ② the firewall allows the sync port (default 18080); ③ restart the desktop app. When the desktop IP changes, the QR code refreshes automatically — just scan again."></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" data-zh="数据保存在哪里？" data-en="Where is my data stored?"></div>
+      <p class="faq-a"><span data-zh="电脑端：按天保存为纯文本文件 " data-en="Desktop: plain-text files "></span><span class="mono">data/YYYY/MM/DD.txt</span><span data-zh="，可用任何编辑器打开。手机端：未推送的记录暂存在 " data-en=", openable in any editor. Phone: unsent entries wait in "></span><span class="mono">staging/</span><span data-zh=" 目录，按天分文件。" data-en=", filed by day."></span></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" data-zh="数据会上传到云端吗？" data-en="Does my data ever leave my devices?"></div>
+      <p class="faq-a" data-zh="不会。应用不包含任何上传逻辑：同步只在局域网内直连进行，所有数据只保存在你自己的电脑和手机上。代码开源，可自行审计。" data-en="No. The apps contain no upload logic: sync is LAN-direct only, and all data lives on your own devices. The source is open for audit."></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" data-zh="支持几台手机连接？" data-en="How many phones can connect?"></div>
+      <p class="faq-a" data-zh="当前版本以单台手机连接为主；底层已预留多台绑定设计，后续版本会开放。" data-en="The current version is designed around one phone at a time; multi-device binding is reserved in the architecture for a future release."></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" data-zh="对系统版本有什么要求？" data-en="System requirements?"></div>
+      <p class="faq-a" data-zh="电脑端：Windows 10 及以上，便携版免安装 Qt。手机端：Android 16 及以上（minSdk 36）。" data-en="Desktop: Windows 10+, portable build needs no Qt install. Phone: Android 16+ (minSdk 36)."></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" data-zh="同步失败会丢数据吗？" data-en="Can a failed sync lose data?"></div>
+      <p class="faq-a" data-zh="不会。推送失败时批数据完整保留在手机上，可重试或丢弃；发送后 30 秒内未收到确认会自动回退为待同步状态。电脑端接收采用两阶段写入与批 ID 幂等，重复提交不会重复写入；启动时还会自动完成中断的批次。" data-en="No. A failed push keeps the full batch on the phone — retry or discard. Without an ack within 30 s, the batch rolls back to pending. The desktop uses two-phase writes and idempotent batch IDs, so resubmissions never duplicate data; interrupted batches are finished automatically on startup."></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" data-zh="换电脑或重装系统，数据怎么迁移？" data-en="How do I migrate to a new computer or after a reinstall?"></div>
+      <p class="faq-a"><span data-zh="两种方式：① 在电脑端「备份导出」生成 ZIP，新电脑上「备份恢复」；② 直接拷贝整个 " data-en="Two ways: ① export a ZIP backup in the desktop app and restore it on the new machine; ② simply copy the whole "></span><span class="mono">data/</span><span data-zh=" 目录到新电脑对应位置——因为日报就是纯文本文件。" data-en=" folder over — your reports are plain-text files."></span></p>
+    </div>
+
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/just-did">GitHub</a>
+      <a href="https://github.com/just-did/just-did-desktop">just-did-desktop</a>
+      <a href="https://github.com/just-did/just-did-app">just-did-app</a>
+      <a href="https://github.com/just-did/just-did.github.io" data-zh="本站仓库" data-en="This site"></a>
+    </div>
+    <div class="footer-copy">just-did · Apache-2.0</div>
+  </div>
+</footer>
+<!-- /footer -->
+
+</body>
+</html>

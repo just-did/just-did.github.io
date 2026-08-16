@@ -7,50 +7,203 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/32x32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/48x48.png">
-  <style>
-    :root { color-scheme: light dark; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: #f7f6f3;
-      color: #2f2e2b;
-    }
-    main { text-align: center; padding: 2rem; }
-    .logo { width: 96px; height: 96px; border-radius: 24px; margin-bottom: 1.5rem; }
-    h1 { font-size: 2.5rem; margin: 0 0 .5rem; letter-spacing: .05em; }
-    p.tagline { color: #6b675f; margin: 0 0 2rem; }
-    nav a {
-      display: inline-block;
-      margin: 0 .5rem;
-      padding: .6rem 1.4rem;
-      border-radius: 8px;
-      background: #2f2e2b;
-      color: #fff;
-      text-decoration: none;
-    }
-    nav a:hover { opacity: .85; }
-    .note { margin-top: 2.5rem; font-size: .85rem; color: #9a958a; }
-    @media (prefers-color-scheme: dark) {
-      body { background: #1c1b19; color: #e8e6e1; }
-      p.tagline { color: #a8a49b; }
-      nav a { background: #e8e6e1; color: #1c1b19; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/i18n.js" defer></script>
 </head>
 <body>
-  <main>
-    <img class="logo" src="assets/icons/128x128.png" alt="just-did logo">
-    <h1>just-did</h1>
-    <p class="tagline">「刚刚做了什么」——极简跨端个人日报记录工具</p>
-    <nav>
-      <a href="https://github.com/just-did/just-did-desktop">桌面端 · Qt/C++</a>
-      <a href="https://github.com/just-did/just-did-app">手机端 · Kotlin/Compose</a>
+
+<!-- nav -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/icons/32x32.png" alt="just-did">just-did</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" aria-current="page" data-zh="首页" data-en="Home"></a>
+      <a href="download.html" data-zh="下载" data-en="Download"></a>
+      <a href="guide.html" data-zh="使用指南" data-en="Guide"></a>
+      <a href="faq.html" data-zh="FAQ" data-en="FAQ"></a>
     </nav>
-    <p class="note">门户网站建设中，敬请期待</p>
-  </main>
+    <div class="lang-switch">
+      <button type="button" data-lang-btn="zh">中文</button>
+      <button type="button" data-lang-btn="en">EN</button>
+    </div>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="menu">☰</button>
+  </div>
+</header>
+<!-- /nav -->
+
+<main>
+  <section class="hero container">
+    <img class="hero-logo" src="assets/icons/128x128.png" alt="just-did logo">
+    <h1 class="hero-title">just-did</h1>
+    <p class="hero-tagline" data-zh="随手记下，刚刚做了什么" data-en="Record in seconds. Your data never leaves your devices."></p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="download.html" data-zh="立即下载" data-en="Download"></a>
+      <a class="btn btn-ghost" href="guide.html" data-zh="使用指南" data-en="Quick start"></a>
+    </div>
+    <div class="txt-card">
+      <div class="txt-card-head"><span>data/2026/08/16.txt</span><span>utf-8</span></div>
+      <div class="txt-card-body">
+        <div><span class="time">09:02</span><span data-zh="修复同步服务端口冲突" data-en="Fixed the sync port conflict"></span></div>
+        <div><span class="time">10:41</span><span data-zh="整理门户网站文案" data-en="Drafted the portal site copy"></span></div>
+        <div><span class="time">15:33</span><span data-zh="给 App 图标做了九个尺寸" data-en="Rendered the app icon in nine sizes"></span></div>
+        <div class="prompt"><span data-zh="刚刚做了什么？" data-en="What did you just do?"></span><span class="cursor"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow" data-zh="核心优势" data-en="Why just-did"></p>
+      <h2 class="section-title" data-zh="为每天复盘而生" data-en="Built for your daily review"></h2>
+      <p class="section-lead" data-zh="忙完一天想不起自己做了什么，隔天细节就丢了。just-did 让记录这件事简单到不值得跳过。" data-en="After a busy day it is hard to recall what you actually did — and by tomorrow the details are gone. just-did makes recording so easy it is never worth skipping."></p>
+      <div class="grid-2">
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+          <div class="card-title" data-zh="极简记录" data-en="Minimal recording"></div>
+          <p class="card-text" data-zh="打开即输入框，回车即存。电脑端悬浮窗常驻屏幕，手机端打开就能写。" data-en="Open and type, hit Enter and it is saved. A floating window on desktop, an input box on your phone."></p>
+        </div>
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/><path d="M9 12h6M9 16h6"/></svg>
+          <div class="card-title" data-zh="纯文本存储" data-en="Plain-text storage"></div>
+          <p class="card-text" data-zh="日报就是 data/YYYY/MM/DD.txt 文本文件——既是数据也是文档，任何编辑器都能打开。" data-en="Each day is one data/YYYY/MM/DD.txt file — data and document at once, openable anywhere."></p>
+        </div>
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <div class="card-title" data-zh="绝对隐私" data-en="Absolute privacy"></div>
+          <p class="card-text" data-zh="所有数据只保存在你自己的电脑和手机上，应用不包含任何上传逻辑。" data-en="All data stays on your own devices. The apps contain no upload logic whatsoever."></p>
+        </div>
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a14 14 0 0 1 20 0"/><path d="M5 13a9 9 0 0 1 14 0"/><path d="M8.5 17a4.5 4.5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg>
+          <div class="card-title" data-zh="局域网同步" data-en="LAN sync"></div>
+          <p class="card-text" data-zh="手机扫电脑二维码即接入，一键推送与拉取，全程局域网直连，不出网。" data-en="Scan the QR code on your desktop to connect. Push and fetch over your local network — nothing goes out."></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow" data-zh="功能" data-en="Features"></p>
+      <h2 class="section-title" data-zh="记下、查看、管理" data-en="Record, review, manage"></h2>
+      <p class="section-lead" data-zh="双端配合：电脑端是数据中心，手机端随手记录、扫码推送。" data-en="Two clients, one workflow: the desktop is your data hub, the phone captures on the go."></p>
+      <div class="grid-4">
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4L8 20H4v-4L17 3z"/><path d="M15 5l3 3"/></svg>
+          <div class="card-title" data-zh="记录" data-en="Record"></div>
+          <p class="card-text" data-zh="电脑端悬浮窗与手机端随时输入，按天自动归档。" data-en="Capture from the floating window or your phone, filed by day automatically."></p>
+        </div>
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          <div class="card-title" data-zh="查看" data-en="Review"></div>
+          <p class="card-text" data-zh="时间线回顾与离线沉浸滑动，上滑上一天、下滑下一天。" data-en="Timeline review with immersive swipe — up for yesterday, down for tomorrow."></p>
+        </div>
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
+          <div class="card-title" data-zh="存储管理" data-en="Manage storage"></div>
+          <p class="card-text" data-zh="按周/月/年阈值清理，一键 ZIP 备份与恢复。" data-en="Clean by week, month or year thresholds; back up and restore as ZIP."></p>
+        </div>
+        <div class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          <div class="card-title" data-zh="日历" data-en="Calendar"></div>
+          <p class="card-text" data-zh="绿点标记有记录的日期，多选批量拉取日报。" data-en="Green dots mark days with entries; multi-select dates to fetch reports."></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reliability">
+    <div class="container">
+      <p class="eyebrow" data-zh="可靠性" data-en="Reliability"></p>
+      <h2 class="section-title" data-zh="为可靠而设计" data-en="Designed for reliability"></h2>
+      <p class="section-lead" data-zh="同步是数据的命脉。七条机制层层设防，让每一次同步都经得起中断与异常。" data-en="Sync is where data lives or dies. Seven mechanisms guard every batch against interruption and failure."></p>
+
+      <div class="mech-list">
+        <div class="mech">
+          <span class="mech-tag">two-phase-write</span>
+          <div><div class="mech-name" data-zh="两阶段写入" data-en="Two-phase write"></div><div class="mech-desc" data-zh="先写快照，再原子覆盖正式文件——覆盖中途断电也不损坏数据。" data-en="Snapshot first, then atomic replace — a power cut mid-write cannot corrupt the file."></div></div>
+        </div>
+        <div class="mech">
+          <span class="mech-tag">idempotent-batch</span>
+          <div><div class="mech-name" data-zh="批 ID 幂等" data-en="Idempotent batch ID"></div><div class="mech-desc" data-zh="同一批数据重复提交直接返回成功，绝不重复写入。" data-en="Resubmitting the same batch returns success without writing twice."></div></div>
+        </div>
+        <div class="mech">
+          <span class="mech-tag">crash-recovery</span>
+          <div><div class="mech-name" data-zh="启动自动恢复" data-en="Crash recovery"></div><div class="mech-desc" data-zh="电脑端启动时扫描「覆盖中」批次，自动完成收尾。" data-en="On startup the desktop scans mid-write batches and finishes them."></div></div>
+        </div>
+        <div class="mech">
+          <span class="mech-tag">state-machine</span>
+          <div><div class="mech-name" data-zh="防丢失状态机" data-en="Loss-proof state machine"></div><div class="mech-desc" data-zh="Pending → Syncing → Synced，30 秒无确认自动回退待同步。" data-en="Pending → Syncing → Synced; no ack in 30 s and the batch rolls back to pending."></div></div>
+        </div>
+        <div class="mech">
+          <span class="mech-tag">global-lock</span>
+          <div><div class="mech-name" data-zh="同步互斥锁" data-en="Global sync lock"></div><div class="mech-desc" data-zh="全局锁保证同一时刻只有一批数据在同步。" data-en="A global lock keeps exactly one batch in flight at any moment."></div></div>
+        </div>
+        <div class="mech">
+          <span class="mech-tag">tamper-detect</span>
+          <div><div class="mech-name" data-zh="篡改检测" data-en="Tamper detection"></div><div class="mech-desc" data-zh="启动与聚焦时对比文件时间戳，发现外部改动可一键修复。" data-en="File timestamps are checked on startup and focus; external edits can be repaired in one click."></div></div>
+        </div>
+        <div class="mech">
+          <span class="mech-tag">api-tests</span>
+          <div><div class="mech-name" data-zh="接口测试" data-en="API tests"></div><div class="mech-desc" data-zh="推送、拉取、二维码接口均有自动化测试脚本验证。" data-en="Submit, fetch and QR endpoints are covered by automated test scripts."></div></div>
+        </div>
+      </div>
+
+      <div class="flow-wrap">
+        <svg viewBox="0 0 900 240" role="img" aria-label="just-did sync data flow">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0L10 5L0 10z" fill="var(--muted)"/>
+            </marker>
+          </defs>
+
+          <rect x="20" y="55" width="180" height="120" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+          <text x="36" y="82" font-family="var(--font-body)" font-size="14" font-weight="600" fill="var(--fg)">手机端 · App</text>
+          <text x="36" y="106" font-family="var(--font-mono)" font-size="12" fill="var(--muted)">staging/ 随手暂存</text>
+          <text x="36" y="126" font-family="var(--font-mono)" font-size="12" fill="var(--muted)">Pending → Syncing</text>
+          <text x="36" y="146" font-family="var(--font-mono)" font-size="12" fill="var(--muted)">30s 无确认自动回退</text>
+
+          <rect x="360" y="55" width="180" height="120" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+          <text x="376" y="82" font-family="var(--font-body)" font-size="14" font-weight="600" fill="var(--fg)">电脑端 · Desktop</text>
+          <text x="376" y="106" font-family="var(--font-mono)" font-size="12" fill="var(--muted)">HTTP 服务 :18080</text>
+          <text x="376" y="126" font-family="var(--font-mono)" font-size="12" fill="var(--muted)">局域网二维码</text>
+          <text x="376" y="146" font-family="var(--font-mono)" font-size="12" fill="var(--muted)">全局同步互斥锁</text>
+
+          <rect x="700" y="55" width="180" height="120" rx="10" fill="var(--code-bg)" stroke="var(--line)"/>
+          <text x="716" y="82" font-family="var(--font-body)" font-size="14" font-weight="600" fill="var(--fg)">日报文件</text>
+          <text x="716" y="106" font-family="var(--font-mono)" font-size="12" fill="var(--brand)">data/2026/08/16.txt</text>
+          <text x="716" y="126" font-family="var(--font-mono)" font-size="12" fill="var(--muted)">纯文本 · 任何编辑器</text>
+          <text x="716" y="146" font-family="var(--font-mono)" font-size="12" fill="var(--muted)">可直接打开</text>
+
+          <line x1="200" y1="88" x2="360" y2="88" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <text x="280" y="74" text-anchor="middle" font-family="var(--font-body)" font-size="12" fill="var(--fg)">扫码配对 · 一键推送 ZIP + 批ID</text>
+          <text x="280" y="104" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--brand)">idempotent · lock · ack</text>
+
+          <line x1="360" y1="142" x2="200" y2="142" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+          <text x="280" y="162" text-anchor="middle" font-family="var(--font-body)" font-size="12" fill="var(--fg)">拉取日报 · 日历多选</text>
+
+          <line x1="540" y1="115" x2="700" y2="115" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <text x="620" y="102" text-anchor="middle" font-family="var(--font-body)" font-size="12" fill="var(--fg)">两阶段写入</text>
+          <text x="620" y="134" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--brand)">snapshot → rename</text>
+        </svg>
+        <p class="flow-caption" data-zh="扫码配对后，手机推送的每一批数据都经过幂等校验与两阶段写入，才落成纯文本日报；拉取方向同样受互斥锁保护。" data-en="After scan-to-connect, every batch pushed from the phone passes idempotency checks and a two-phase write before it lands as a plain-text daily log; fetches are protected by the same global lock."></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/just-did">GitHub</a>
+      <a href="https://github.com/just-did/just-did-desktop">just-did-desktop</a>
+      <a href="https://github.com/just-did/just-did-app">just-did-app</a>
+      <a href="https://github.com/just-did/just-did.github.io" data-zh="本站仓库" data-en="This site"></a>
+    </div>
+    <div class="footer-copy">just-did · Apache-2.0</div>
+  </div>
+</footer>
+<!-- /footer -->
+
 </body>
 </html>

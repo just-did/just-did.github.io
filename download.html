@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>下载 · just-did</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/48x48.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/i18n.js" defer></script>
+</head>
+<body>
+
+<!-- nav -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/icons/32x32.png" alt="just-did">just-did</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" data-zh="首页" data-en="Home"></a>
+      <a href="download.html" aria-current="page" data-zh="下载" data-en="Download"></a>
+      <a href="guide.html" data-zh="使用指南" data-en="Guide"></a>
+      <a href="faq.html" data-zh="FAQ" data-en="FAQ"></a>
+    </nav>
+    <div class="lang-switch">
+      <button type="button" data-lang-btn="zh">中文</button>
+      <button type="button" data-lang-btn="en">EN</button>
+    </div>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="menu">☰</button>
+  </div>
+</header>
+<!-- /nav -->
+
+<main>
+  <section class="page-head container">
+    <h1 class="page-title" data-zh="下载" data-en="Download"></h1>
+    <p class="page-lead" data-zh="两个客户端均为开源软件（Apache-2.0），下载即用，无需注册。" data-en="Both clients are open source (Apache-2.0). Download and go — no sign-up."></p>
+  </section>
+
+  <section class="section-tight">
+    <div class="container dl-grid">
+
+      <div class="card dl-card">
+        <div class="dl-card-head">
+          <img src="assets/icons/128x128.png" alt="just-did-desktop icon">
+          <div>
+            <div class="dl-title">just-did-desktop</div>
+            <div class="dl-sub" data-zh="电脑端 · 本地记录 + 局域网同步服务（Qt6/C++）" data-en="Desktop · local recording + LAN sync server (Qt6/C++)"></div>
+          </div>
+        </div>
+        <dl class="dl-meta">
+          <div><dt data-zh="当前版本" data-en="Version"></dt><dd class="mono">v1.0.0</dd></div>
+          <div><dt data-zh="体积" data-en="Size"></dt><dd data-zh="约 32MB" data-en="~32 MB"></dd></div>
+          <div><dt data-zh="格式" data-en="Format"></dt><dd data-zh="便携 ZIP，解压即用，免安装 Qt" data-en="Portable ZIP — unzip and run, no Qt install"></dd></div>
+          <div><dt>SHA-256</dt><dd class="mono">1c107f865e7f986a81a102f7b27eac8e4d8cbd882ba0c0d579cbe9966683b629</dd></div>
+          <div><dt data-zh="系统要求" data-en="Requires"></dt><dd>Windows 10+</dd></div>
+        </dl>
+        <ol class="dl-steps">
+          <li><b>1</b><span data-zh="下载 ZIP 到本地" data-en="Download the ZIP"></span></li>
+          <li><b>2</b><span data-zh="解压到任意目录" data-en="Unzip anywhere"></span></li>
+          <li><b>3</b><span data-zh="运行 JustDid.exe，悬浮窗出现在屏幕右侧" data-en="Run JustDid.exe — the floating window docks to the right edge"></span></li>
+        </ol>
+        <a class="btn btn-primary" href="https://github.com/just-did/just-did-desktop/releases/latest" data-zh="下载电脑端" data-en="Download desktop"></a>
+      </div>
+
+      <div class="card dl-card">
+        <div class="dl-card-head">
+          <img src="assets/icons/128x128.png" alt="just-did-app icon">
+          <div>
+            <div class="dl-title">just-did-app</div>
+            <div class="dl-sub" data-zh="手机端 · 随手记录 + 扫码推送（Kotlin/Compose）" data-en="Mobile · capture on the go + scan-to-push (Kotlin/Compose)"></div>
+          </div>
+        </div>
+        <dl class="dl-meta">
+          <div><dt data-zh="当前版本" data-en="Version"></dt><dd class="mono">v1.0.0</dd></div>
+          <div><dt data-zh="体积" data-en="Size"></dt><dd data-zh="约 49MB" data-en="~49 MB"></dd></div>
+          <div><dt data-zh="格式" data-en="Format"></dt><dd>APK</dd></div>
+          <div><dt data-zh="系统要求" data-en="Requires"></dt><dd>Android 16+ (minSdk 36)</dd></div>
+        </dl>
+        <ol class="dl-steps">
+          <li><b>1</b><span data-zh="下载 APK 到手机" data-en="Download the APK to your phone"></span></li>
+          <li><b>2</b><span data-zh="允许安装未知来源应用" data-en="Allow installing from unknown sources"></span></li>
+          <li><b>3</b><span data-zh="打开 App，扫描电脑端二维码完成连接" data-en="Open the app and scan the desktop QR code to connect"></span></li>
+        </ol>
+        <a class="btn btn-primary" href="https://github.com/just-did/just-did-app/releases/latest" data-zh="下载手机端" data-en="Download app"></a>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="note-box" data-zh="提示：SHA-256 校验值随每次 Release 发布；下载后遇到问题或有建议，请到对应仓库的 Issues 反馈。" data-en="Note: the SHA-256 checksum ships with each release. Questions and feedback belong in the repo's Issues."></div>
+    </div>
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/just-did">GitHub</a>
+      <a href="https://github.com/just-did/just-did-desktop">just-did-desktop</a>
+      <a href="https://github.com/just-did/just-did-app">just-did-app</a>
+      <a href="https://github.com/just-did/just-did.github.io" data-zh="本站仓库" data-en="This site"></a>
+    </div>
+    <div class="footer-copy">just-did · Apache-2.0</div>
+  </div>
+</footer>
+<!-- /footer -->
+
+</body>
+</html>
