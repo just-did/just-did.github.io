@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>just-did · 刚刚做了什么</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f7f6f3;
+      color: #2f2e2b;
+    }
+    main { text-align: center; padding: 2rem; }
+    h1 { font-size: 2.5rem; margin: 0 0 .5rem; letter-spacing: .05em; }
+    p.tagline { color: #6b675f; margin: 0 0 2rem; }
+    nav a {
+      display: inline-block;
+      margin: 0 .5rem;
+      padding: .6rem 1.4rem;
+      border-radius: 8px;
+      background: #2f2e2b;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a:hover { opacity: .85; }
+    .note { margin-top: 2.5rem; font-size: .85rem; color: #9a958a; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #1c1b19; color: #e8e6e1; }
+      p.tagline { color: #a8a49b; }
+      nav a { background: #e8e6e1; color: #1c1b19; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>just-did</h1>
+    <p class="tagline">「刚刚做了什么」——极简跨端个人日报记录工具</p>
+    <nav>
+      <a href="https://github.com/just-did/just-did-desktop">桌面端 · Qt/C++</a>
+      <a href="https://github.com/just-did/just-did-app">手机端 · Kotlin/Compose</a>
+    </nav>
+    <p class="note">门户网站建设中，敬请期待</p>
+  </main>
+</body>
+</html>
