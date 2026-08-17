@@ -97,6 +97,18 @@
       </div>
     </div>
 
+    <h2 class="guide-sub" data-zh="数据存储与迁移" data-en="Storage and migration"></h2>
+    <div class="step">
+      <div class="step-num" data-zh="·" data-en="·"></div>
+      <div>
+        <p class="step-text" data-zh="数据根：日报与索引统一存放在数据根 just-did-data/ 下——日报是纯文本 data/YYYY/MM/DD.txt，索引库是 just_do.db，两者同根。" data-en="Data root: reports and index live together under just-did-data/ — plain-text reports at data/YYYY/MM/DD.txt, the index at just_do.db. One folder holds everything."></p>
+        <p class="step-text" style="margin-top:8px" data-zh="升级迁移（v1.0.0 → v1.1.0）：v1.1.0 不会自动迁移旧数据。先退出程序，把旧安装目录下的 just_do.db 与 data/ 文件夹整体移入新数据根 just-did-data/ 下，重启后日历即恢复。" data-en="Upgrading from v1.0.0: old data is not migrated automatically. Quit the app, move just_do.db and the data/ folder from your old install directory into the new data root just-did-data/, then restart — your calendar is back."></p>
+        <p class="step-text" style="margin-top:8px" data-zh="换电脑迁移：整体拷贝数据根 just-did-data/ 到新电脑对应位置即可；也可使用电脑端的 ZIP 备份与恢复。" data-en="New computer: copy the whole data root just-did-data/ over; or use the desktop's ZIP backup and restore."></p>
+        <p class="step-text" style="margin-top:8px" data-zh="自定义存储位置：编辑 config.yml 顶层配置 data-root 即可把数据根指向任意目录——缺失或留空时默认 {应用目录}/just-did-data，相对路径按应用目录解析，绝对路径原样使用。" data-en="Custom location: set the top-level data-root key in config.yml to point the data root anywhere — missing or blank falls back to {app dir}/just-did-data; relative paths resolve against the app directory, absolute paths are used as-is."></p>
+        <div class="note-box"><span data-zh="注意：" data-en="Note:"></span> <span data-zh="移动数据或修改配置前请先退出程序，避免运行中的文件被占用。" data-en="quit the app before moving files or editing config.yml."></span></div>
+      </div>
+    </div>
+
     <h2 class="guide-sub" data-zh="网络说明" data-en="Network notes"></h2>
     <div class="step">
       <div class="step-num" data-zh="·" data-en="·"></div>

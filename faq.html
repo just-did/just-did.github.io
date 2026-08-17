@@ -47,7 +47,7 @@
 
     <div class="faq-item">
       <div class="faq-q" data-zh="数据保存在哪里？" data-en="Where is my data stored?"></div>
-      <p class="faq-a"><span data-zh="电脑端：按天保存为纯文本文件 " data-en="Desktop: plain-text files "></span><span class="mono">data/YYYY/MM/DD.txt</span><span data-zh="，可用任何编辑器打开。手机端：未推送的记录暂存在 " data-en=", openable in any editor. Phone: unsent entries wait in "></span><span class="mono">staging/</span><span data-zh=" 目录，按天分文件。" data-en=", filed by day."></span></p>
+      <p class="faq-a"><span data-zh="电脑端：按天保存为纯文本文件，位于数据根下的 " data-en="Desktop: plain-text files under the data root at "></span><span class="mono">just-did-data/data/YYYY/MM/DD.txt</span><span data-zh="，可用任何编辑器打开；数据根位置可通过 config.yml 的 " data-en=", openable in any editor; the data root location is configurable via "></span><span class="mono">data-root</span><span data-zh=" 自定义。手机端：未推送的记录暂存在 " data-en=" in config.yml. Phone: unsent entries wait in "></span><span class="mono">staging/</span><span data-zh=" 目录，按天分文件。" data-en=", filed by day."></span></p>
     </div>
 
     <div class="faq-item">
@@ -72,7 +72,12 @@
 
     <div class="faq-item">
       <div class="faq-q" data-zh="换电脑或重装系统，数据怎么迁移？" data-en="How do I migrate to a new computer or after a reinstall?"></div>
-      <p class="faq-a"><span data-zh="两种方式：① 在电脑端「备份导出」生成 ZIP，新电脑上「备份恢复」；② 直接拷贝整个 " data-en="Two ways: ① export a ZIP backup in the desktop app and restore it on the new machine; ② simply copy the whole "></span><span class="mono">data/</span><span data-zh=" 目录到新电脑对应位置——因为日报就是纯文本文件。" data-en=" folder over — your reports are plain-text files."></span></p>
+      <p class="faq-a"><span data-zh="两种方式：① 在电脑端「备份导出」生成 ZIP，新电脑上「备份恢复」；② 直接整体拷贝数据根 " data-en="Two ways: ① export a ZIP backup in the desktop app and restore it on the new machine; ② copy the whole data root "></span><span class="mono">just-did-data/</span><span data-zh=" 到新电脑对应位置——索引库与日报同根，一次拷齐。" data-en=" over — index and reports share one root, one copy gets everything."></span></p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" data-zh="升级到 v1.1.0 后日历为什么空了？" data-en="Why is my calendar empty after upgrading to v1.1.0?"></div>
+      <p class="faq-a" data-zh="v1.1.0 起数据统一存放于数据根 just-did-data/，旧版本数据不会自动迁移。先退出程序，把旧安装目录下的 just_do.db 与 data/ 文件夹整体移入新数据根 just-did-data/ 下，重启后即可恢复。" data-en="Since v1.1.0 all data lives under the data root just-did-data/ and old data is not migrated automatically. Quit the app, move just_do.db and the data/ folder from the old install directory into just-did-data/, then restart — your records come back."></p>
     </div>
 
   </section>
