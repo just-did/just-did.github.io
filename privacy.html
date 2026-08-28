@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>隐私权政策 · just-did</title>
+  <title data-zh="隐私权政策 · just-did" data-en="Privacy Policy · just-did">隐私权政策 · just-did</title>
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/32x32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/48x48.png">
@@ -41,221 +41,118 @@
 
   <section class="section-tight container">
 
-    <!-- English Version -->
-    <div lang="en" style="display: none;">
+    <h2 data-zh="概述" data-en="Overview"></h2>
+    <p><span data-zh="刚刚做了什么（Just Did）是一款帮助你本地记录日常活动的手机应用。我们致力于保护你的隐私。本隐私权政策说明我们如何处理你的数据。" data-en="Just Did (刚刚做了什么) is a mobile app designed to help you record daily activities locally. We are committed to protecting your privacy. This Privacy Policy explains how we handle your data."></span></p>
 
-      <h2 data-zh="概述" data-en="Overview">Overview</h2>
-      <p><strong>Just Did</strong> (刚刚做了什么) is a mobile app designed to help you record daily activities locally. We are committed to protecting your privacy. This Privacy Policy explains how we handle your data.</p>
+    <h2 data-zh="数据收集与处理" data-en="Data Collection and Processing"></h2>
+    <p><strong data-zh="我们不收集、传输或存储任何个人数据到服务器。" data-en="We do NOT collect, transmit, or store your personal data on our servers."></strong></p>
+    <p data-zh="所有数据处理都仅在你的设备上进行：" data-en="All data processing is done entirely on your device:"></p>
+    <ul>
+      <li><strong data-zh="暂存记录" data-en="Staging Records"></strong><span data-zh="：每日活动记录作为文本文件存储在你的手机本地（格式：" data-en=": Daily activity records are stored locally on your phone in text files (format: "></span><span class="mono">staging-YYYYMMDD.txt</span><span data-zh="）" data-en=")"></span></li>
+      <li><strong data-zh="日报内容" data-en="Daily Reports"></strong><span data-zh="：从电脑端应用拉取的文档存储在你的手机本地" data-en=": Documents fetched from your desktop app are stored locally on your phone"></span></li>
+      <li><strong data-zh="应用配置" data-en="App Configuration"></strong><span data-zh="：连接设置和应用偏好设置使用 Android DataStore 存储在本地" data-en=": Connection settings and app preferences are stored locally using Android DataStore"></span></li>
+      <li><strong data-zh="数据库索引" data-en="Database Indexes"></strong><span data-zh="：日报元数据（日期、文件路径、大小、同步状态）存储在本地 Room 数据库" data-en=": Daily report metadata (dates, file paths, sizes, sync status) are stored in local Room database"></span></li>
+    </ul>
 
-      <h2 data-zh="数据收集与处理" data-en="Data Collection and Processing">Data Collection and Processing</h2>
-      <p><strong>We do NOT collect, transmit, or store your personal data on our servers.</strong></p>
-      <p>All data processing is done entirely on your device:</p>
-      <ul>
-        <li><strong>Staging Records</strong>: Daily activity records are stored locally on your phone in text files (format: <span class="mono">staging-YYYYMMDD.txt</span>)</li>
-        <li><strong>Daily Reports</strong>: Documents fetched from your desktop app are stored locally on your phone</li>
-        <li><strong>App Configuration</strong>: Connection settings and app preferences are stored locally using Android DataStore</li>
-        <li><strong>Database Indexes</strong>: Daily report metadata (dates, file paths, sizes, sync status) are stored in local Room database</li>
-      </ul>
+    <h2 data-zh="网络通信" data-en="Network Communication"></h2>
+    <p><span data-zh="此应用仅与你的" data-en="This app communicates only with your "></span><strong data-zh="个人电脑端应用" data-en="personal desktop app"></strong><span data-zh="（刚刚做了什么桌面版）通过本地局域网通信：" data-en=" (Just Did Desktop) over your local network:"></span></p>
+    <ul>
+      <li><strong data-zh="健康检查" data-en="Health Check"></strong><span data-zh="：周期性连接验证（每 60 秒一次）——只读，无副作用" data-en=": Periodic connectivity verification (every 60 seconds) — read-only, no side effects"></span></li>
+      <li><strong data-zh="数据同步" data-en="Data Sync"></strong><span data-zh="：将暂存记录上传到电脑端应用" data-en=": Uploading staging records to your desktop app"></span></li>
+      <li><strong data-zh="数据拉取" data-en="Data Fetch"></strong><span data-zh="：从电脑端应用下载日报内容" data-en=": Downloading daily reports from your desktop app"></span></li>
+    </ul>
 
-      <h2 data-zh="网络通信" data-en="Network Communication">Network Communication</h2>
-      <p>This app communicates only with your <strong>personal desktop app</strong> (Just Did Desktop) over your local network:</p>
-      <ul>
-        <li><strong>Health Check</strong>: Periodic connectivity verification (every 60 seconds) — read-only, no side effects</li>
-        <li><strong>Data Sync</strong>: Uploading staging records to your desktop app</li>
-        <li><strong>Data Fetch</strong>: Downloading daily reports from your desktop app</li>
-      </ul>
+    <h3 data-zh="通信详情" data-en="Communication Details"></h3>
+    <ul>
+      <li><strong data-zh="协议" data-en="Protocol"></strong><span data-zh="：HTTP（仅限局域网，不通过互联网传输）" data-en=": HTTP (local network only, not transmitted over the internet)"></span></li>
+      <li><strong data-zh="端点" data-en="Endpoints"></strong><span data-zh="：" data-en=":"></span>
+        <ul>
+          <li><span class="mono">GET /health</span> <span data-zh="— 连接检查" data-en="— Connectivity check"></span></li>
+          <li><span class="mono">POST /sync/submit</span> <span data-zh="— 上传暂存记录（批次 ID 幂等）" data-en="— Upload staging records with batch ID (idempotent)"></span></li>
+          <li><span class="mono">POST /sync/fetch</span> <span data-zh="— 下载日报内容" data-en="— Download daily report content"></span></li>
+          <li><span class="mono">POST /sync/fetch-index</span> <span data-zh="— 下载报告元数据" data-en="— Download report metadata"></span></li>
+        </ul>
+      </li>
+    </ul>
 
-      <h3 data-zh="通信详情" data-en="Communication Details">Communication Details</h3>
-      <ul>
-        <li><strong>Protocol</strong>: HTTP (local network only, not transmitted over the internet)</li>
-        <li><strong>Endpoints</strong>:
-          <ul>
-            <li><span class="mono">GET /health</span> — Connectivity check</li>
-            <li><span class="mono">POST /sync/submit</span> — Upload staging records with batch ID (idempotent)</li>
-            <li><span class="mono">POST /sync/fetch</span> — Download daily report content</li>
-            <li><span class="mono">POST /sync/fetch-index</span> — Download report metadata</li>
-          </ul>
-        </li>
-      </ul>
+    <p><span data-zh="所有网络通信都在你的局域网内进行，" data-en="All network communication is local to your LAN and never leaves your home network. "></span><strong data-zh="永远不会离开你的家庭网络" data-en=""></strong><span data-zh="。" data-en=""></span><strong data-zh="应用不具备互联网访问��力" data-en="The app has no internet access capability"></strong><span data-zh="。" data-en="."></span></p>
 
-      <p>All network communication is local to your LAN and never leaves your home network. <strong>The app has no internet access capability</strong>.</p>
-
-      <h2 data-zh="数据存储" data-en="Data Storage">Data Storage</h2>
-      <p>All data remains on your device:</p>
-      <div class="note-box">
-        {App Private Directory}/<br>
-        &nbsp;&nbsp;staging/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Daily activity records<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;staging-YYYYMMDD.txt<br>
-        &nbsp;&nbsp;data/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Fetched daily reports<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;YYYY/MM/DD.txt<br>
-        &nbsp;&nbsp;Room Database&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Report indexes<br>
-        &nbsp;&nbsp;DataStore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Configuration
-      </div>
-
-      <ul>
-        <li><strong>No Cloud Upload</strong>: Data is never uploaded to the cloud or any remote server</li>
-        <li><strong>No Backup to Cloud</strong>: This app does not participate in automatic cloud backups</li>
-        <li><strong>Local Only</strong>: All data is exclusively stored on your phone and desktop computer</li>
-      </ul>
-
-      <h2 data-zh="数据删除" data-en="Data Deletion">Data Deletion</h2>
-      <p>You have full control over your data:</p>
-      <ul>
-        <li><strong>Manual Deletion</strong>: Use the app's management page to delete staging records or daily reports</li>
-        <li><strong>App Uninstall</strong>: Uninstalling the app will remove all app data and local storage</li>
-        <li><strong>No Remote Data</strong>: Since no data is stored remotely, no additional deletion actions are needed</li>
-      </ul>
-
-      <h2 data-zh="第三方服务" data-en="Third-Party Services">Third-Party Services</h2>
-      <p>This app does <strong>NOT</strong> use:</p>
-      <ul>
-        <li>Analytics services (Google Analytics, Mixpanel, etc.)</li>
-        <li>Crash reporting services (Firebase Crashlytics, Sentry, etc.)</li>
-        <li>Advertising networks (AdMob, etc.)</li>
-        <li>Social media SDKs</li>
-        <li>Cloud storage services (Google Drive, Dropbox, etc.)</li>
-      </ul>
-
-      <h2 data-zh="权限说明" data-en="Permissions">Permissions</h2>
-      <p>This app requests the following Android permissions:</p>
-      <div class="note-box">
-        <strong>INTERNET</strong> – Local network communication<br>
-        To sync with your desktop app over LAN<br><br>
-        <strong>READ_EXTERNAL_STORAGE</strong> – File access<br>
-        To read/write activity records (Android 11 and below)<br><br>
-        <strong>WRITE_EXTERNAL_STORAGE</strong> – File access<br>
-        To store staging records and reports (Android 11 and below)<br><br>
-        <strong>CAMERA</strong> – QR code scanning<br>
-        To scan desktop app's connection QR code
-      </div>
-
-      <h2 data-zh="安全性" data-en="Security">Security</h2>
-      <ul>
-        <li><strong>Local Processing</strong>: All data processing happens on your device only</li>
-        <li><strong>No Encryption</strong>: Since data never leaves your device, it's protected by your phone's device encryption</li>
-        <li><strong>Open Source</strong>: The source code is available on GitHub for security review</li>
-        <li><strong>No Backdoors</strong>: No telemetry, tracking, or hidden data collection</li>
-      </ul>
-
-      <h2 data-zh="政策变更" data-en="Changes to This Policy">Changes to This Policy</h2>
-      <p>We may update this Privacy Policy occasionally. We will notify users of any material changes by updating the "Last Updated" date above.</p>
-
-      <h2 data-zh="联系方式" data-en="Contact">Contact</h2>
-      <p>For privacy concerns or questions, please contact:</p>
-      <ul>
-        <li>GitHub: <a href="https://github.com/just-did/just-did-app">https://github.com/just-did/just-did-app</a></li>
-        <li>Issues: <a href="https://github.com/just-did/just-did-app/issues">https://github.com/just-did/just-did-app/issues</a></li>
-      </ul>
-
+    <h2 data-zh="数据存储" data-en="Data Storage"></h2>
+    <p data-zh="所有数据都保存在你的设备上：" data-en="All data remains on your device:"></p>
+    <div class="note-box">
+      {<span data-zh="应用私有目录" data-en="App Private Directory"></span>}/
+      <br>
+      &nbsp;&nbsp;staging/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-zh="# 每日活动记录" data-en="# Daily activity records"></span>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;staging-YYYYMMDD.txt
+      <br>
+      &nbsp;&nbsp;data/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-zh="# 拉取的日报" data-en="# Fetched daily reports"></span>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;YYYY/MM/DD.txt
+      <br>
+      &nbsp;&nbsp;Room <span data-zh="数据库" data-en="Database"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-zh="# 日报索引" data-en="# Report indexes"></span>
+      <br>
+      &nbsp;&nbsp;DataStore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-zh="# 配置" data-en="# Configuration"></span>
     </div>
 
-    <!-- Chinese Version -->
-    <div lang="zh" style="display: block;">
+    <ul>
+      <li><strong data-zh="不上传到云端" data-en="No Cloud Upload"></strong><span data-zh="：数据永不上传到云或任何远程服务器" data-en=": Data is never uploaded to the cloud or any remote server"></span></li>
+      <li><strong data-zh="不备份到云" data-en="No Backup to Cloud"></strong><span data-zh="：此应用不参与自动云备份" data-en=": This app does not participate in automatic cloud backups"></span></li>
+      <li><strong data-zh="仅限本地" data-en="Local Only"></strong><span data-zh="：所有数据仅存储在你的手机和电脑上" data-en=": All data is exclusively stored on your phone and desktop computer"></span></li>
+    </ul>
 
-      <h2>概述</h2>
-      <p><strong>刚刚做了什么（Just Did）</strong> 是一款帮助你本地记录日常活动的手机应用。我们致力于保护你的隐私。本隐私权政策说明我们如何处理你的数据。</p>
+    <h2 data-zh="数据删除" data-en="Data Deletion"></h2>
+    <p data-zh="你对数据拥有完全控制权：" data-en="You have full control over your data:"></p>
+    <ul>
+      <li><strong data-zh="手动删除" data-en="Manual Deletion"></strong><span data-zh="：使用应用管理页面删除暂存记录或日报" data-en=": Use the app's management page to delete staging records or daily reports"></span></li>
+      <li><strong data-zh="卸载应用" data-en="App Uninstall"></strong><span data-zh="：卸载应用将删除所有应用数据和本地存储" data-en=": Uninstalling the app will remove all app data and local storage"></span></li>
+      <li><strong data-zh="无远程数据" data-en="No Remote Data"></strong><span data-zh="：由于数据不存储在远程，不需要其他删除操作" data-en=": Since no data is stored remotely, no additional deletion actions are needed"></span></li>
+    </ul>
 
-      <h2>数据收集与处理</h2>
-      <p><strong>我们不收集、传输或存储任何个人数据到服务器。</strong></p>
-      <p>所有数据处理都仅在你的设备上进行：</p>
-      <ul>
-        <li><strong>暂存记录</strong>：每日活动记录作为文本文件存储在你的手机本地（格式：<span class="mono">staging-YYYYMMDD.txt</span>）</li>
-        <li><strong>日报内容</strong>：从电脑端应用拉取的文档存储在你的手机本地</li>
-        <li><strong>应用配置</strong>：连接设置和应用偏好设置使用 Android DataStore 存储在本地</li>
-        <li><strong>数据库索引</strong>：日报元数据（日期、文件路径、大小、同步状态）存储在本地 Room 数据库</li>
-      </ul>
+    <h2 data-zh="第三方服务" data-en="Third-Party Services"></h2>
+    <p><span data-zh="此应用" data-en="This app does "></span><strong data-zh="不使用" data-en="NOT"></strong><span data-zh="：" data-en=" use:"></span></p>
+    <ul>
+      <li data-zh="分析服务（Google Analytics、Mixpanel 等）" data-en="Analytics services (Google Analytics, Mixpanel, etc.)"></li>
+      <li data-zh="崩溃报告服务（Firebase Crashlytics、Sentry 等）" data-en="Crash reporting services (Firebase Crashlytics, Sentry, etc.)"></li>
+      <li data-zh="广告网络（AdMob 等）" data-en="Advertising networks (AdMob, etc.)"></li>
+      <li data-zh="社交媒体 SDK" data-en="Social media SDKs"></li>
+      <li data-zh="云存储服务（Google Drive、Dropbox 等）" data-en="Cloud storage services (Google Drive, Dropbox, etc.)"></li>
+    </ul>
 
-      <h2>网络通信</h2>
-      <p>此应用仅与你的<strong>个人电脑端应用</strong>（刚刚做了什么桌面版）通过本地局域网通信：</p>
-      <ul>
-        <li><strong>健康检查</strong>：周期性连接验证（每 60 秒一次）——只读，无副作用</li>
-        <li><strong>数据同步</strong>：将暂存记录上传到电脑端应用</li>
-        <li><strong>数据拉取</strong>：从电脑端应用下载日报内容</li>
-      </ul>
-
-      <h3>通信详情</h3>
-      <ul>
-        <li><strong>协议</strong>：HTTP（仅限局域网，不通过互联网传输）</li>
-        <li><strong>端点</strong>：
-          <ul>
-            <li><span class="mono">GET /health</span> — 连接检查</li>
-            <li><span class="mono">POST /sync/submit</span> — 上传暂存记录（批次 ID 幂等）</li>
-            <li><span class="mono">POST /sync/fetch</span> — 下载日报内容</li>
-            <li><span class="mono">POST /sync/fetch-index</span> — 下载报告元数据</li>
-          </ul>
-        </li>
-      </ul>
-
-      <p>所有网络通信都在你的局域网内进行，<strong>永远不会离开你的家庭网络</strong>。<strong>应用不具备互联网访问能力</strong>。</p>
-
-      <h2>数据存储</h2>
-      <p>所有数据都保存在你的设备上：</p>
-      <div class="note-box">
-        {应用私有目录}/<br>
-        &nbsp;&nbsp;staging/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 每日活动记录<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;staging-YYYYMMDD.txt<br>
-        &nbsp;&nbsp;data/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 拉取的日报<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;YYYY/MM/DD.txt<br>
-        &nbsp;&nbsp;Room 数据库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 日报索引<br>
-        &nbsp;&nbsp;DataStore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 配置
-      </div>
-
-      <ul>
-        <li><strong>不上传到云端</strong>：数据永不上传到云或任何远程服务器</li>
-        <li><strong>不备份到云</strong>：此应用不参与自动云备份</li>
-        <li><strong>仅限本地</strong>：所有数据仅存储在你的手机和电脑上</li>
-      </ul>
-
-      <h2>数据删除</h2>
-      <p>你对数据拥有完全控制权：</p>
-      <ul>
-        <li><strong>手动删除</strong>：使用应用管理页面删除暂存记录或日报</li>
-        <li><strong>卸载应用</strong>：卸载应用将删除所有应用数据和本地存储</li>
-        <li><strong>无远程数据</strong>：由于数据不存储在远程，不需要其他删除操作</li>
-      </ul>
-
-      <h2>第三方服务</h2>
-      <p>此应用<strong>不使用</strong>：</p>
-      <ul>
-        <li>分析服务（Google Analytics、Mixpanel 等）</li>
-        <li>崩溃报告服务（Firebase Crashlytics、Sentry 等）</li>
-        <li>广告网络（AdMob 等）</li>
-        <li>社交媒体 SDK</li>
-        <li>云存储服务（Google Drive、Dropbox 等）</li>
-      </ul>
-
-      <h2>权限说明</h2>
-      <p>此应用请求的 Android 权限：</p>
-      <div class="note-box">
-        <strong>INTERNET</strong> – 本地网络通信<br>
-        与电脑端应用通过局域网同步<br><br>
-        <strong>READ_EXTERNAL_STORAGE</strong> – 文件访问<br>
-        读写活动记录（Android 11 及以下）<br><br>
-        <strong>WRITE_EXTERNAL_STORAGE</strong> – 文件访问<br>
-        存储暂存记录和日报（Android 11 及以下）<br><br>
-        <strong>CAMERA</strong> – 二维码扫描<br>
-        扫描电脑端应用的连接二维码
-      </div>
-
-      <h2>安全性</h2>
-      <ul>
-        <li><strong>本地处理</strong>：所有数据处理仅在你的设备上进行</li>
-        <li><strong>无加密需求</strong>：由于数据不离开你的设备，受手机设备加密保护</li>
-        <li><strong>开源代码</strong>：源代码在 GitHub 上公开，可供安全审计</li>
-        <li><strong>无后门</strong>：无遥测、跟踪或隐藏数据收集</li>
-      </ul>
-
-      <h2>政策变更</h2>
-      <p>我们可能会不时更新本隐私权政策。如有重大变更，我们将通过更新上方"最后更新"日期来通知用户。</p>
-
-      <h2>联系方式</h2>
-      <p>如有隐私问题或疑问，请联系：</p>
-      <ul>
-        <li>GitHub：<a href="https://github.com/just-did/just-did-app">https://github.com/just-did/just-did-app</a></li>
-        <li>问题反馈：<a href="https://github.com/just-did/just-did-app/issues">https://github.com/just-did/just-did-app/issues</a></li>
-      </ul>
-
+    <h2 data-zh="权限说明" data-en="Permissions"></h2>
+    <p data-zh="此应用请求的 Android 权限：" data-en="This app requests the following Android permissions:"></p>
+    <div class="note-box">
+      <strong>INTERNET</strong> <span data-zh="– 本地网络通信" data-en="– Local network communication"></span><br>
+      <span data-zh="与电脑端应用通过局域网同步" data-en="To sync with your desktop app over LAN"></span>
+      <br><br>
+      <strong>READ_EXTERNAL_STORAGE</strong> <span data-zh="– 文件访问" data-en="– File access"></span><br>
+      <span data-zh="读写活动记录（Android 11 及以下）" data-en="To read/write activity records (Android 11 and below)"></span>
+      <br><br>
+      <strong>WRITE_EXTERNAL_STORAGE</strong> <span data-zh="– 文件访问" data-en="– File access"></span><br>
+      <span data-zh="存储暂存记录和日报（Android 11 及以下）" data-en="To store staging records and reports (Android 11 and below)"></span>
+      <br><br>
+      <strong>CAMERA</strong> <span data-zh="– 二维码扫描" data-en="– QR code scanning"></span><br>
+      <span data-zh="扫描电脑端应用的连接二维码" data-en="To scan desktop app's connection QR code"></span>
     </div>
+
+    <h2 data-zh="安全性" data-en="Security"></h2>
+    <ul>
+      <li><strong data-zh="本地处理" data-en="Local Processing"></strong><span data-zh="：所有数据处理仅在你的设备上进行" data-en=": All data processing happens on your device only"></span></li>
+      <li><strong data-zh="无加密需求" data-en="No Encryption"></strong><span data-zh="：由于数据不离开你的设备，受手机设备加密保护" data-en=": Since data never leaves your device, it's protected by your phone's device encryption"></span></li>
+      <li><strong data-zh="开源代码" data-en="Open Source"></strong><span data-zh="：源代码在 GitHub 上公开，可供安全审计" data-en=": The source code is available on GitHub for security review"></span></li>
+      <li><strong data-zh="无后门" data-en="No Backdoors"></strong><span data-zh="：无遥测、跟踪或隐藏数据收集" data-en=": No telemetry, tracking, or hidden data collection"></span></li>
+    </ul>
+
+    <h2 data-zh="政策变更" data-en="Changes to This Policy"></h2>
+    <p data-zh="我们可能会不时更新本隐私权政策。如有重大变更，我们将通过更新上方"最后更新"日期来通知用户。" data-en="We may update this Privacy Policy occasionally. We will notify users of any material changes by updating the &quot;Last Updated&quot; date above."></p>
+
+    <h2 data-zh="联系方式" data-en="Contact"></h2>
+    <p data-zh="如有隐私问题或疑问，请联系：" data-en="For privacy concerns or questions, please contact:"></p>
+    <ul>
+      <li>GitHub: <a href="https://github.com/just-did/just-did-app">https://github.com/just-did/just-did-app</a></li>
+      <li data-zh="问题反馈" data-en="Issues"></li>
+      <li><a href="https://github.com/just-did/just-did-app/issues">https://github.com/just-did/just-did-app/issues</a></li>
+    </ul>
 
   </section>
 </main>
@@ -272,32 +169,7 @@
     <div class="footer-copy">just-did · Apache-2.0</div>
   </div>
 </footer>
-<!-- /footer -->
-
-<script src="assets/js/i18n.js"></script>
-<script>
-  // Handle language switching for privacy policy
-  const langButtons = document.querySelectorAll('[data-lang-btn]');
-  const langContents = document.querySelectorAll('[lang]');
-
-  function updateLanguageDisplay(lang) {
-    langContents.forEach(element => {
-      element.style.display = element.lang === lang ? 'block' : 'none';
-    });
-  }
-
-  langButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const lang = button.getAttribute('data-lang-btn');
-      updateLanguageDisplay(lang);
-      localStorage.setItem('preferred-lang', lang);
-    });
-  });
-
-  // Load preferred language
-  const preferredLang = localStorage.getItem('preferred-lang') || 'zh';
-  updateLanguageDisplay(preferredLang);
-</script>
+<!-- /nav -->
 
 </body>
 </html>
