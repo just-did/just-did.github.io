@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私权政策 · just-did</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/48x48.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/i18n.js" defer></script>
+  <style>
+    .privacy-content {
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .privacy-content h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .privacy-content h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .privacy-content p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .privacy-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .privacy-content ul, .privacy-content ol {
+      margin: 1rem 0 1rem 2rem;
+      color: var(--text-secondary);
+    }
+    .privacy-content li {
+      margin-bottom: 0.5rem;
+    }
+    .privacy-content code {
+      background-color: var(--bg-secondary);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #d63384;
+    }
+    .privacy-content pre {
+      background-color: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .privacy-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .privacy-content table th,
+    .privacy-content table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-secondary);
+    }
+    .privacy-content table th {
+      background-color: var(--bg-secondary);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .privacy-lang-note {
+      padding: 1rem;
+      background-color: var(--bg-secondary);
+      border-radius: 6px;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+<!-- nav -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html"><img src="assets/icons/32x32.png" alt="just-did">just-did</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" data-zh="首页" data-en="Home"></a>
+      <a href="download.html" data-zh="下载" data-en="Download"></a>
+      <a href="guide.html" data-zh="使用指南" data-en="Guide"></a>
+      <a href="reliability.html" data-zh="可靠性" data-en="Reliability"></a>
+      <a href="faq.html" data-zh="FAQ" data-en="FAQ"></a>
+      <a href="privacy.html" aria-current="page" data-zh="隐私权政策" data-en="Privacy"></a>
+    </nav>
+    <div class="lang-switch">
+      <button type="button" data-lang-btn="zh">中文</button>
+      <button type="button" data-lang-btn="en">EN</button>
+    </div>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="menu">☰</button>
+  </div>
+</header>
+<!-- /nav -->
+
+<main>
+  <section class="page-head container">
+    <h1 class="page-title" data-zh="隐私权政策" data-en="Privacy Policy"></h1>
+    <p class="page-lead" data-zh="最后更新于 2026-08-28" data-en="Last Updated: 2026-08-28"></p>
+  </section>
+
+  <section class="section-tight container privacy-content">
+
+    <div class="privacy-lang-note" data-zh="本页面同时提供中文和英文版本，请使用页面右上角的语言切换按钮选择。" data-en="This page is available in both Chinese and English. Please use the language switch button in the top right corner to select your preferred language."></div>
+
+    <!-- English Version -->
+    <div lang="en" style="display: none;">
+
+      <h2>Overview</h2>
+      <p><strong>Just Did</strong> (刚刚做了什么) is a mobile app designed to help you record daily activities locally. We are committed to protecting your privacy. This Privacy Policy explains how we handle your data.</p>
+
+      <h2>Data Collection and Processing</h2>
+      <p><strong>We do NOT collect, transmit, or store your personal data on our servers.</strong></p>
+      <p>All data processing is done entirely on your device:</p>
+      <ul>
+        <li><strong>Staging Records</strong>: Daily activity records are stored locally on your phone in text files (format: <code>staging-YYYYMMDD.txt</code>)</li>
+        <li><strong>Daily Reports</strong>: Documents fetched from your desktop app are stored locally on your phone</li>
+        <li><strong>App Configuration</strong>: Connection settings and app preferences are stored locally using Android DataStore</li>
+        <li><strong>Database Indexes</strong>: Daily report metadata (dates, file paths, sizes, sync status) are stored in local Room database</li>
+      </ul>
+
+      <h2>Network Communication</h2>
+      <p>This app communicates only with your <strong>personal desktop app</strong> (Just Did Desktop) over your local network:</p>
+      <ul>
+        <li><strong>Health Check</strong>: Periodic connectivity verification (every 60 seconds) — read-only, no side effects</li>
+        <li><strong>Data Sync</strong>: Uploading staging records to your desktop app</li>
+        <li><strong>Data Fetch</strong>: Downloading daily reports from your desktop app</li>
+      </ul>
+
+      <h3>Communication Details</h3>
+      <ul>
+        <li><strong>Protocol</strong>: HTTP (local network only, not transmitted over the internet)</li>
+        <li><strong>Endpoints</strong>:
+          <ul>
+            <li><code>GET /health</code> — Connectivity check</li>
+            <li><code>POST /sync/submit</code> — Upload staging records with batch ID (idempotent)</li>
+            <li><code>POST /sync/fetch</code> — Download daily report content</li>
+            <li><code>POST /sync/fetch-index</code> — Download report metadata</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>All network communication is local to your LAN and never leaves your home network. <strong>The app has no internet access capability</strong>.</p>
+
+      <h2>Data Storage</h2>
+      <p>All data remains on your device:</p>
+      <pre>{App Private Directory}/
+  staging/                      # Daily activity records
+    staging-YYYYMMDD.txt
+  data/                         # Fetched daily reports
+    YYYY/MM/DD.txt
+  Room Database                 # Report indexes
+  DataStore                     # Configuration</pre>
+
+      <ul>
+        <li><strong>No Cloud Upload</strong>: Data is never uploaded to the cloud or any remote server</li>
+        <li><strong>No Backup to Cloud</strong>: This app does not participate in automatic cloud backups</li>
+        <li><strong>Local Only</strong>: All data is exclusively stored on your phone and desktop computer</li>
+      </ul>
+
+      <h2>Data Deletion</h2>
+      <p>You have full control over your data:</p>
+      <ul>
+        <li><strong>Manual Deletion</strong>: Use the app's management page to delete staging records or daily reports</li>
+        <li><strong>App Uninstall</strong>: Uninstalling the app will remove all app data and local storage</li>
+        <li><strong>No Remote Data</strong>: Since no data is stored remotely, no additional deletion actions are needed</li>
+      </ul>
+
+      <h2>Third-Party Services</h2>
+      <p>This app does <strong>NOT</strong> use:</p>
+      <ul>
+        <li>Analytics services (Google Analytics, Mixpanel, etc.)</li>
+        <li>Crash reporting services (Firebase Crashlytics, Sentry, etc.)</li>
+        <li>Advertising networks (AdMob, etc.)</li>
+        <li>Social media SDKs</li>
+        <li>Cloud storage services (Google Drive, Dropbox, etc.)</li>
+      </ul>
+
+      <h2>Permissions</h2>
+      <p>This app requests the following Android permissions:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Purpose</th>
+            <th>Why Needed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>INTERNET</code></td>
+            <td>Local network communication</td>
+            <td>To sync with your desktop app over LAN</td>
+          </tr>
+          <tr>
+            <td><code>READ_EXTERNAL_STORAGE</code></td>
+            <td>File access</td>
+            <td>To read/write activity records (Android 11 and below)</td>
+          </tr>
+          <tr>
+            <td><code>WRITE_EXTERNAL_STORAGE</code></td>
+            <td>File access</td>
+            <td>To store staging records and reports (Android 11 and below)</td>
+          </tr>
+          <tr>
+            <td><code>CAMERA</code></td>
+            <td>QR code scanning</td>
+            <td>To scan desktop app's connection QR code</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Security</h2>
+      <ul>
+        <li><strong>Local Processing</strong>: All data processing happens on your device only</li>
+        <li><strong>No Encryption</strong>: Since data never leaves your device, it's protected by your phone's device encryption</li>
+        <li><strong>Open Source</strong>: The source code is available on GitHub for security review</li>
+        <li><strong>No Backdoors</strong>: No telemetry, tracking, or hidden data collection</li>
+      </ul>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy occasionally. We will notify users of any material changes by updating the "Last Updated" date above.</p>
+
+      <h2>Contact</h2>
+      <p>For privacy concerns or questions, please contact:</p>
+      <ul>
+        <li>GitHub: <a href="https://github.com/just-did/just-did-app">https://github.com/just-did/just-did-app</a></li>
+        <li>Issues: <a href="https://github.com/just-did/just-did-app/issues">https://github.com/just-did/just-did-app/issues</a></li>
+      </ul>
+
+    </div>
+
+    <!-- Chinese Version -->
+    <div lang="zh" style="display: block;">
+
+      <h2>概述</h2>
+      <p><strong>刚刚做了什么（Just Did）</strong> 是一款帮助你本地记录日常活动的手机应用。我们致力于保护你的隐私。本隐私权政策说明我们如何处理你的数据。</p>
+
+      <h2>数据收集与处理</h2>
+      <p><strong>我们不收集、传输或存储任何个人数据到服务器。</strong></p>
+      <p>所有数据处理都仅在你的设备上进行：</p>
+      <ul>
+        <li><strong>暂存记录</strong>：每日活动记录作为文本文件存储在你的手机本地（格式：<code>staging-YYYYMMDD.txt</code>）</li>
+        <li><strong>日报内容</strong>：从电脑端应用拉取的文档存储在你的手机本地</li>
+        <li><strong>应用配置</strong>：连接设置和应用偏好设置使用 Android DataStore 存储在本地</li>
+        <li><strong>数据库索引</strong>：日报元数据（日期、文件路径、大小、同步状态）存储在本地 Room 数据库</li>
+      </ul>
+
+      <h2>网络通信</h2>
+      <p>此应用仅与你的<strong>个人电脑端应用</strong>（刚刚做了什么桌面版）通过本地局域网通信：</p>
+      <ul>
+        <li><strong>健康检查</strong>：周期性连接验证（每 60 秒一次）——只读，无副作用</li>
+        <li><strong>数据同步</strong>：将暂存记录上传到电脑端应用</li>
+        <li><strong>数据拉取</strong>：从电脑端应用下载日报内容</li>
+      </ul>
+
+      <h3>通信详情</h3>
+      <ul>
+        <li><strong>协议</strong>：HTTP（仅限局域网，不通过互联网传输）</li>
+        <li><strong>端点</strong>：
+          <ul>
+            <li><code>GET /health</code> — 连接检查</li>
+            <li><code>POST /sync/submit</code> — 上传暂存记录（批次 ID 幂等）</li>
+            <li><code>POST /sync/fetch</code> — 下载日报内容</li>
+            <li><code>POST /sync/fetch-index</code> — 下载报告元数据</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>所有网络通信都在你的局域网内进行，<strong>永远不会离开你的家庭网络</strong>。<strong>应用不具备互联网访问能力</strong>。</p>
+
+      <h2>数据存储</h2>
+      <p>所有数据都保存在你的设备上：</p>
+      <pre>{应用私有目录}/
+  staging/                      # 每日活动记录
+    staging-YYYYMMDD.txt
+  data/                         # 拉取的日报
+    YYYY/MM/DD.txt
+  Room 数据库                    # 日报索引
+  DataStore                     # 配置</pre>
+
+      <ul>
+        <li><strong>不上传到云端</strong>：数据永不上传到云或任何远程服务器</li>
+        <li><strong>不备份到云</strong>：此应用不参与自动云备份</li>
+        <li><strong>仅限本地</strong>：所有数据仅存储在你的手机和电脑上</li>
+      </ul>
+
+      <h2>数据删除</h2>
+      <p>你对数据拥有完全控制权：</p>
+      <ul>
+        <li><strong>手动删除</strong>：使用应用管理页面删除暂存记录或日报</li>
+        <li><strong>卸载应用</strong>：卸载应用将删除所有应用数据和本地存储</li>
+        <li><strong>无远程数据</strong>：由于数据不存储在远程，不需要其他删除操作</li>
+      </ul>
+
+      <h2>第三方服务</h2>
+      <p>此应用<strong>不使用</strong>：</p>
+      <ul>
+        <li>分析服务（Google Analytics、Mixpanel 等）</li>
+        <li>崩溃报告服务（Firebase Crashlytics、Sentry 等）</li>
+        <li>广告网络（AdMob 等）</li>
+        <li>社交媒体 SDK</li>
+        <li>云存储服务（Google Drive、Dropbox 等）</li>
+      </ul>
+
+      <h2>权限说明</h2>
+      <p>此应用请求的 Android 权限：</p>
+      <table>
+        <thead>
+          <tr>
+            <th>权限</th>
+            <th>用途</th>
+            <th>为什么需要</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>INTERNET</code></td>
+            <td>本地网络通信</td>
+            <td>与电脑端应用通过局域网同步</td>
+          </tr>
+          <tr>
+            <td><code>READ_EXTERNAL_STORAGE</code></td>
+            <td>文件访问</td>
+            <td>读写活动记录（Android 11 及以下）</td>
+          </tr>
+          <tr>
+            <td><code>WRITE_EXTERNAL_STORAGE</code></td>
+            <td>文件访问</td>
+            <td>存储暂存记录和日报（Android 11 及以下）</td>
+          </tr>
+          <tr>
+            <td><code>CAMERA</code></td>
+            <td>二维码扫描</td>
+            <td>扫描电脑端应用的连接二维码</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>安全性</h2>
+      <ul>
+        <li><strong>本地处理</strong>：所有数据处理仅在你的设备上进行</li>
+        <li><strong>无加密需求</strong>：由于数据不离开你的设备，受手机设备加密保护</li>
+        <li><strong>开源代码</strong>：源代码在 GitHub 上公开，可供安全审计</li>
+        <li><strong>无后门</strong>：无遥测、跟踪或隐藏数据收集</li>
+      </ul>
+
+      <h2>政策变更</h2>
+      <p>我们可能会不时更新本隐私权政策。如有重大变更，我们将通过更新上方"最后更新"日期来通知用户。</p>
+
+      <h2>联系方式</h2>
+      <p>如有隐私问题或疑问，请联系：</p>
+      <ul>
+        <li>GitHub：<a href="https://github.com/just-did/just-did-app">https://github.com/just-did/just-did-app</a></li>
+        <li>问题反馈：<a href="https://github.com/just-did/just-did-app/issues">https://github.com/just-did/just-did-app/issues</a></li>
+      </ul>
+
+    </div>
+
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/just-did">GitHub</a>
+      <a href="https://github.com/just-did/just-did-desktop">just-did-desktop</a>
+      <a href="https://github.com/just-did/just-did-app">just-did-app</a>
+      <a href="https://github.com/just-did/just-did.github.io" data-zh="本站仓库" data-en="This site"></a>
+    </div>
+    <div class="footer-copy">just-did · Apache-2.0</div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<script>
+  // Handle language switching for privacy policy
+  const langButtons = document.querySelectorAll('[data-lang-btn]');
+  const langContents = document.querySelectorAll('[lang]');
+
+  function updateLanguageDisplay(lang) {
+    langContents.forEach(element => {
+      element.style.display = element.lang === lang ? 'block' : 'none';
+    });
+  }
+
+  langButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const lang = button.getAttribute('data-lang-btn');
+      updateLanguageDisplay(lang);
+      localStorage.setItem('preferred-lang', lang);
+    });
+  });
+
+  // Load preferred language
+  const preferredLang = localStorage.getItem('preferred-lang') || 'zh';
+  updateLanguageDisplay(preferredLang);
+</script>
+
+</body>
+</html>
